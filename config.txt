@@ -1,0 +1,2 @@
+net.madani.dao.DaoImpl
+net.madani.metier.MetierImpl

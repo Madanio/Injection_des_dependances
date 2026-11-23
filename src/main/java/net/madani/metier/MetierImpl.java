@@ -1,7 +1,11 @@
 package net.madani.metier;
 
 import net.madani.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
+@Service("metier")
 public class MetierImpl implements IMetier {
     private IDao dao; // Couplage faible
 
@@ -10,7 +14,8 @@ public class MetierImpl implements IMetier {
      * un objet d'une classe qui implémente l'interface IDao
      * au moment de l'instantiation
      */
-    public MetierImpl(IDao dao) {
+    @Autowired
+    public MetierImpl(@Qualifier("d2") IDao dao) {
         this.dao = dao;
     }
 
